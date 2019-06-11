@@ -1,8 +1,20 @@
 @import 'reset';
 
+html {
+	font-family: sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
 p {
 	line-height: 2em;
-	font-family: sans-serif;
+}
+
+h1 {
+	font-style: italic;
+	font-family: serif;
 }
 
 $break-point: 650px;
@@ -19,12 +31,12 @@ $black-text-color: rgb(47, 47, 48);
 	.items {
 		display: flex;
 		flex-direction: row;
+		white-space: nowrap;
 
 		> a {
+			font-family: serif;
 			display: block;
 			padding: 0 10px;
-			text-decoration: none;
-
 			color: $black-text-color;
 			font-style: italic;
 			font-size: 18px;
@@ -57,7 +69,7 @@ $black-text-color: rgb(47, 47, 48);
 			transform: translateY(-100%);
 			transition: transform 0.4s;
 			display: flex;
-			background-color: darken($color: #f2bd1e, $amount: 3); // TODO: Find better color
+			background-color: #f2bd1e;
 			flex-direction: column;
 			align-items: stretch;
 
@@ -120,6 +132,8 @@ $black-text-color: rgb(47, 47, 48);
 
 .hero-sidebar {
 	width: 330px;
+	flex-shrink: 0;
+
 	background-color: #599b8d;
 	color:  white;
 	display: flex;
@@ -127,10 +141,20 @@ $black-text-color: rgb(47, 47, 48);
 	align-items: center;
 	justify-content: center;
 
+	text-align: center;
+
 	padding: 100px 0px;
 
 	> * {
 		margin-bottom: 30px;
+	}
+
+	a {
+		color: white;
+	}
+
+	p {
+		line-height: 1.5em;
 	}
 
 	@media screen and (max-width: $break-point) {
@@ -146,7 +170,8 @@ $black-text-color: rgb(47, 47, 48);
 	background-color: white;
 	line-height: 52px;
 	padding: 0 25px;
-	color: black;
+	color: $black-text-color !important;
+	font-family: sans-serif;
 }
 
 .page-section {
@@ -166,7 +191,6 @@ $black-text-color: rgb(47, 47, 48);
 		color: rgb(242, 189, 30);
 		font-size: 32px;
 		margin-bottom: 40px;
-		font-style: italic;
 	}
 
 	.content {
