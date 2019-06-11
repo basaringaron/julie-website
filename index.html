@@ -7,8 +7,10 @@
 		<link rel='stylesheet' href='style.css'>
 	</head>
 	<body>
+		<div style='position: relative; z-index: 10;'>
 		<div class='nav' tabindex="-1">
-			<div class='nav-icon'>☰</div>
+			<div class='nav-icon open'>☰</div>
+			<div class='nav-icon close' onclick='document.activeElement&&document.activeElement.blur()'>╳</div>
 			<div class='items'>
 				<a href=''>Home</a>
 				<a href='#about'>About</a>
@@ -17,6 +19,7 @@
 				<a href=''>Skills &amp; Languages</a>
 				<a href=''>Other Interests</a>
 			</div>
+		</div>
 		</div>
 
 		<div class='hero'>
@@ -37,9 +40,15 @@
 			</div>
 
 			<div class='hero-content'>
-				<p>HELLO, I'M</p>
+				<div class='page-section' id='about2'>
+					<div class='content'>
+						<h1>About Me</h1>
+						<p>I'm a young research scientist with a passion for data analysis and visualisation. Through my background in Physics and a PhD in Cognitive Science I developed a strong taste for multidisciplinarity, with a particular interest in language and human behaviour, but I'm always open to new, exciting research challenges. I invite you to explore my website to discover what I've been up to so far!</p>
+					</div>
+				</div>
+				<!--<p>HELLO, I'M</p>
 				<p>Maria Julia Carbajal, PhD</p>
-				<p>Research Scientist &amp; Data Analyst</p>	
+				<p>Research Scientist &amp; Data Analyst</p>	-->
 			</div>
 		</div>
 
