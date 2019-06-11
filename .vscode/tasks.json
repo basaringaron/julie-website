@@ -6,7 +6,7 @@
 		{
             "label": "Build style.css",
             "type": "shell",
-            "command": "sass -t compressed style.scss style.css",
+            "command": "sass style.scss style.css",
             "group": "build",
             "presentation": {
                 "reveal": "always",
