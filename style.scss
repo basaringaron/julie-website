@@ -1,16 +1,65 @@
 @import 'reset';
 
+$break-point: 650px;
+
 .nav {
 	height: 70px;
 	background-color: #f2bd1e;
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
 	padding: 0 40px;
+	line-height: 70px;
 
-	> * {
-		margin: 10px;
+	.items {
+		display: flex;
+		flex-direction: row;
+
+		> a {
+			display: block;
+			padding: 0 10px;
+			text-decoration: none;
+		}
+	}
+
+	.nav-icon {
+		display: none;
+	}
+
+	@media screen and (max-width: $break-point) {
+		position: relative;
+
+		.items {
+			// Position exactly under the nav bar:
+			position: absolute; 
+			top: 100%;
+			left: 0;
+			width: 100%;
+			z-index: 10;
+			
+			display: none; // Don't show until it's focused
+			background-color: darken($color: #f2bd1e, $amount: 3); // TODO: Find better color
+			flex-direction: column;
+			align-items: stretch;
+
+			line-height: 50px;
+		}
+
+		.nav-icon {
+			display: block;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			line-height: 70px;
+			background-color: white;
+			position: absolute;
+			right: 0;
+			top: 0;
+			font-size: 1.5em;
+		}
+
+		&:focus-within { // Show items when the nav bar is focused (nav bar has tabindex="-1")
+			.items {
+				display: flex;
+			}
+		}
 	}
 }
 
@@ -19,6 +68,10 @@
 	flex-direction: row;
 	border-bottom: 100px solid #242323;
 	//height: calc(100vh - 70px);
+
+	@media screen and (max-width: $break-point) {
+		flex-direction: column-reverse;
+	}
 }
 
 .hero-content {
@@ -38,6 +91,10 @@
 
 	> * {
 		margin-bottom: 30px;
+	}
+
+	@media screen and (max-width: $break-point) {
+		width: auto;
 	}
 }
 
