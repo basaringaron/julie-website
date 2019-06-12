@@ -17,7 +17,9 @@ h1 {
 	font-family: serif;
 }
 
-$break-point: 650px;
+$nav-break-point: 680px;
+$hero-break-point: 800px;
+
 $black-text-color: rgb(47, 47, 48);
 
 .nav {
@@ -54,7 +56,7 @@ $black-text-color: rgb(47, 47, 48);
 		display: none;
 	}
 
-	@media screen and (max-width: $break-point) {
+	@media screen and (max-width: $nav-break-point) {
 		position: relative;
 
 		.items {
@@ -121,13 +123,50 @@ $black-text-color: rgb(47, 47, 48);
 	border-bottom: 100px solid #242323;
 	//height: calc(100vh - 70px);
 
-	@media screen and (max-width: $break-point) {
+	@media screen and (max-width: $hero-break-point) {
 		flex-direction: column-reverse;
 	}
 }
 
 .hero-content {
-	font-size: 30px;
+	background-color: #f3f3f3;
+
+	flex-grow: 1;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.big-intro {
+		margin: 50px 0;
+
+		color: $black-text-color;
+		font-size: calc((100vw - 330px) * 0.08);
+		@media screen and (max-width: $hero-break-point) {
+			font-size: calc(100vw * 0.08);
+		}
+
+		@media screen and (min-width: 1280px) {
+			font-size: calc((1280px - 330px) * 0.08);
+		}
+
+
+		.intro1 {
+			font-family: sans-serif;
+			font-size: 0.4em;
+		}
+
+		.intro2 {
+			font-family: serif;
+			
+		}
+
+		.intro3 {
+			font-family: serif;
+			font-style: italic;
+			font-size: 0.5em;
+		}
+	}
 }
 
 .hero-sidebar {
@@ -157,7 +196,7 @@ $black-text-color: rgb(47, 47, 48);
 		line-height: 1.5em;
 	}
 
-	@media screen and (max-width: $break-point) {
+	@media screen and (max-width: $hero-break-point) {
 		width: auto;
 	}
 }
