@@ -64,6 +64,10 @@ $black-text-color: rgb(47, 47, 48);
 			&:hover {
 				color: white;
 			}
+
+			&.active {
+				color: white;
+			}
 		}
 	}
 
