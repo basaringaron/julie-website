@@ -19,6 +19,7 @@ h1 {
 
 $nav-break-point: 680px;
 $hero-break-point: 800px;
+$dated-item-break-point: 680px;
 
 $black-text-color: rgb(47, 47, 48);
 
@@ -219,7 +220,8 @@ $black-text-color: rgb(47, 47, 48);
 	color: $black-text-color;
 
 	&.color2 {
-		background-color: #beded7;
+		//background-color: #beded7;
+		background-color: #f3f3f3;
 
 		h1 {
 			color: $black-text-color;
@@ -238,8 +240,37 @@ $black-text-color: rgb(47, 47, 48);
 	}
 }
 
+.dated-item {
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+	line-height: 1.2em;
+
+	margin-bottom: 40px;
+
+	.date {
+		width: 140px;
+		flex-shrink: 0;
+		margin-bottom: 10px;
+	}
+
+	.description {
+		p {
+			line-height: inherit;
+			margin: 0
+		}
+	}
+
+	@media screen and (max-width: $dated-item-break-point) {
+		flex-direction: column;
+	}
+}
+
 .footer {
-	line-height: 54px;
+	min-height: 54px;
+	display:flex;
+	justify-content: center;
+	align-items: center;
 	background-color: #599b8d;
 	text-align: center;
 	color: white;
