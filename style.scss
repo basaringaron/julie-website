@@ -6,10 +6,7 @@ html {
 
 a {
 	text-decoration: none;
-}
-
-p {
-	line-height: 2em;
+	color: inherit;
 }
 
 h1 {
@@ -216,8 +213,14 @@ $black-text-color: rgb(47, 47, 48);
 
 .page-section {
 	padding: 50px 40px;
-	font-size: 21px;
 	color: $black-text-color;
+
+	&.large-font {
+		font-size: 21px;
+		p {
+			line-height: 2em;
+		}		
+	}
 
 	&.color2 {
 		//background-color: #beded7;
