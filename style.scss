@@ -4,17 +4,33 @@ html {
 	font-family: sans-serif;
 }
 
+
+// Make footer stick to the bottom of the screen:
+body {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+.footer {
+	margin-top: auto;
+}
+
+p {
+	line-height: 1.3em;
+	margin-bottom: 30px;
+}
+
 a {
-	text-decoration: none;
+	text-decoration: underline;
 	color: inherit;
 }
 
-h1 {
+h1, h2 {
 	font-style: italic;
 	font-family: serif;
 }
 
-$nav-break-point: 680px;
+$nav-break-point: 900px;
 $hero-break-point: 800px;
 $dated-item-break-point: 680px;
 
@@ -40,6 +56,7 @@ $black-text-color: rgb(47, 47, 48);
 			color: $black-text-color;
 			font-style: italic;
 			font-size: 18px;
+			text-decoration: none;
 
 			&:visited {
 				color: $black-text-color;
@@ -120,6 +137,10 @@ $black-text-color: rgb(47, 47, 48);
 	flex-direction: row;
 	border-bottom: 100px solid #242323;
 	//height: calc(100vh - 70px);
+
+	a {
+		text-decoration: none;
+	}
 
 	@media screen and (max-width: $hero-break-point) {
 		flex-direction: column-reverse;
@@ -231,10 +252,21 @@ $black-text-color: rgb(47, 47, 48);
 		}
 	}
 
-	h1 {
+	h1, h2 {
 		color: rgb(242, 189, 30);
+	}
+
+	h1 {
 		font-size: 32px;
-		margin-bottom: 40px;
+		margin: 50px 0;
+	}
+
+	h2 {
+		font-family: sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 22px;
+		margin: 40px 0;
 	}
 
 	.content {
@@ -247,12 +279,12 @@ $black-text-color: rgb(47, 47, 48);
 	display: flex;
 	flex-direction: row;
 	align-items: baseline;
-	line-height: 1.2em;
 
 	margin-bottom: 40px;
 
 	.date {
-		width: 140px;
+		//width: 140px;
+		width: var(--date-width, 140px);
 		flex-shrink: 0;
 		margin-bottom: 10px;
 	}
@@ -266,6 +298,11 @@ $black-text-color: rgb(47, 47, 48);
 
 	@media screen and (max-width: $dated-item-break-point) {
 		flex-direction: column;
+
+		.date {
+			width: auto;
+			border-bottom: 2px solid rgba(0,0,0,0.15);
+		}
 	}
 }
 
