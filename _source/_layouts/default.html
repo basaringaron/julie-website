@@ -6,13 +6,14 @@
 	<title>{{ site.title }}</title>
 	<link rel="stylesheet" href="/css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600|Nunito+Sans:300,600|Playfair+Display:400,400i|Poppins:300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 	<div class="nav" tabindex="-1">
 		<div class='nav-hamburger'>
 			<div class='nav-title'>{{ page.title }}</div>
-			<div class="nav-icon open">☰</div>
-			<div class="nav-icon close" onclick="document.activeElement&&document.activeElement.blur()">&times;</div>
+			<div class="nav-icon open"><i class="material-icons">menu</i></div>
+			<div class="nav-icon close" onclick="document.activeElement&&document.activeElement.blur()"><i class="material-icons">close</i></div>
 		</div>
 		<nav class="nav-items">
 			<a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/" class="active">Home</a>
