@@ -13,13 +13,11 @@
 			<div class="nav-icon open">☰</div>
 			<div class="nav-icon close" onclick="document.activeElement&&document.activeElement.blur()">&times;</div>
 			<nav class="nav-items">
-				<a class="nav-link" href="/" class="active">Home</a>
+				<a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/" class="active">Home</a>
 				<a class="nav-link" href="/#about">About</a>
-				<a class="nav-link" href="/education.html">Education</a>
-				<a class="nav-link" href="/experience.html">Experience</a>
-				<a class="nav-link" href="/publications.html">Publications &amp; Presentations</a>
-				<a class="nav-link" href="/skills.html">Skills &amp; Languages</a>
-				<a class="nav-link" href="/other.html">Other Interests</a>
+				{% for link in site.nav_links %}
+					<a class="nav-link {% if page.url == link.url %}active{% endif %}" href="{{ link.url }}">{{ link.title | escape }}</a>
+				{% endfor %}
 			</nav>
 		</div>
 	</header>

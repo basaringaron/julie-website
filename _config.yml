@@ -35,6 +35,24 @@ markdown: kramdown
 #plugins:
 #  - jekyll-feed
 
+# Note: index and about are hardcoded in the layout
+nav_links:
+  -
+    url: /education.html
+    title: Education
+  -
+    url: /experience.html
+    title: Experience
+  -
+    url: /publications.html
+    title: Publications & Presentations
+  -
+    url: /skills.html
+    title: Skills & Languages
+  -
+    url: /other.html
+    title: Other Interests
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

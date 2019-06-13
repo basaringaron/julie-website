@@ -51,6 +51,41 @@ strong {
 	font-weight: 600;
 }
 
+.button {
+	background-color: white;
+	padding: 1em 2em;
+	color: $charcoal !important;
+	position: relative;
+	z-index: 1;
+	outline: none;
+	overflow: hidden;
+	transition: color 0.4s ease-in-out;
+
+	&::before {
+		content: '';
+		z-index: -1;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+		background-color: $yellow;
+		transform-origin: center;
+		transform: translate(-50%, -50%) scale(0);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&:hover {
+		cursor: pointer;
+		color: white !important;
+	}
+
+	&:hover::before {
+		transform: translate(-50%, -50%) scale(15);
+	}
+}
+
 .nav {
 	outline: none; // prevent rendering outline on focus since it has tabindex
 	height: $nav-height;
@@ -220,9 +255,7 @@ strong {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-
 	text-align: center;
-
 	padding: 50px 0px;
 
 	> * {
@@ -251,13 +284,6 @@ strong {
 
 .portrait {
 	clip-path: circle(50% at center);
-}
-
-.cv-link {
-	background-color: white;
-	line-height: 52px;
-	padding: 0 25px;
-	color: $charcoal !important;
 }
 
 .page-section {
