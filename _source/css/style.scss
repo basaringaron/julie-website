@@ -1,13 +1,21 @@
 ---
 # This section (Yaml) is required by Jekyll
 ---
-
 @import 'reset';
+
+$black: #2F2F30;
+$yellow: #f2bd1e;
+
+$nav-height: 70px
+$nav-bg: $yellow;
+
+$nav-break-point: 900px;
+$hero-break-point: 800px;
+$dated-item-break-point: 680px;
 
 html {
 	font-family: sans-serif;
 }
-
 
 // Make footer stick to the bottom of the screen:
 body {
@@ -15,6 +23,7 @@ body {
 	display: flex;
 	flex-direction: column;
 }
+
 .footer {
 	margin-top: auto;
 }
@@ -34,44 +43,39 @@ h1, h2 {
 	font-family: serif;
 }
 
-$nav-break-point: 900px;
-$hero-break-point: 800px;
-$dated-item-break-point: 680px;
-
-$black-text-color: rgb(47, 47, 48);
-
 .nav {
-	height: 70px;
-	background-color: #f2bd1e;
+	outline: none; // prevent rendering outline on focus since it has tabindex
+	height: $nav-height;
+	background-color: $nav-bg;
 	padding: 0 40px;
-	line-height: 70px;
+	line-height: $nav-height;
+	box-shadow: 0 0 30px rgba(black, 0.1);
 
-	box-shadow: 0 0 30px rgba(0,0,0,0.1);
-
-	.items {
+	.nav-items {
 		display: flex;
 		flex-direction: row;
 		white-space: nowrap;
+	}
 
-		> a {
-			font-family: serif;
-			display: block;
-			padding: 0 10px;
-			color: $black-text-color;
-			font-style: italic;
-			font-size: 18px;
-			text-decoration: none;
+	.nav-link {
+		font-family: serif;
+		display: block;
+		padding: 0 10px;
+		color: $black;
+		font-style: italic;
+		font-size: 18px;
+		text-decoration: none;
 
-			&:visited {
-				color: $black-text-color;
-			}
-			&:hover {
-				color: white;
-			}
+		&:visited {
+			color: $black;
+		}
 
-			&.active {
-				color: white;
-			}
+		&:hover {
+			color: white;
+		}
+
+		&.active {
+			color: white;
 		}
 	}
 
@@ -82,7 +86,7 @@ $black-text-color: rgb(47, 47, 48);
 	@media screen and (max-width: $nav-break-point) {
 		position: relative;
 
-		.items {
+		.nav-items {
 			// Position exactly under the nav bar:
 			position: absolute;
 			top: 100%;
@@ -126,13 +130,14 @@ $black-text-color: rgb(47, 47, 48);
 		}
 
 		&:focus-within { // Show items when the nav bar is focused (nav bar has tabindex="-1")
-			.items {
+			.nav-items {
 				transform: translateY(0);
 			}
 
 			.nav-icon.open {
 				display: none;
 			}
+
 			.nav-icon.close {
 				display: block;
 			}
@@ -167,7 +172,7 @@ $black-text-color: rgb(47, 47, 48);
 	.big-intro {
 		margin: 50px 0;
 
-		color: $black-text-color;
+		color: $black;
 		font-size: calc((100vw - 330px) * 0.08);
 		@media screen and (max-width: $hero-break-point) {
 			font-size: calc(100vw * 0.08);
@@ -235,13 +240,13 @@ $black-text-color: rgb(47, 47, 48);
 	background-color: white;
 	line-height: 52px;
 	padding: 0 25px;
-	color: $black-text-color !important;
+	color: $black !important;
 	font-family: sans-serif;
 }
 
 .page-section {
 	padding: 50px 40px;
-	color: $black-text-color;
+	color: $black;
 
 	&.large-font {
 		font-size: 21px;
@@ -255,7 +260,7 @@ $black-text-color: rgb(47, 47, 48);
 		background-color: #f3f3f3;
 
 		h1 {
-			color: $black-text-color;
+			color: $black;
 		}
 	}
 
