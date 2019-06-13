@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{{ site.title }}</title>
+		<link rel="stylesheet" href="/css/style.css">
+	</head>
+	<body>
+		<div style="position: relative; z-index: 10;">
+			<div class="nav" tabindex="-1">
+				<div class="nav-icon open">☰</div>
+				<div class="nav-icon close" onclick="document.activeElement&&document.activeElement.blur()">&times;</div>
+				<div class="items">
+					<a href="/" class="active">Home</a>
+					<a href="/#about">About</a>
+					<a href="/education.html">Education</a>
+					<a href="/experience.html">Experience</a>
+					<a href="/publications.html">Publications &amp; Presentations</a>
+					<a href="/skills.html">Skills &amp; Languages</a>
+					<a href="/other.html">Other Interests</a>
+				</div>
+			</div>
+		</div>
+
+		{{ content }}
+
+		<div class="footer">© 2019 Maria Julia Carbajal. Last updated: May 2019</div>
+	</body>
+</html>

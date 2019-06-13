@@ -1,3 +1,7 @@
+---
+# This section (Yaml) is required by Jekyll
+---
+
 @import 'reset';
 
 html {
@@ -80,12 +84,12 @@ $black-text-color: rgb(47, 47, 48);
 
 		.items {
 			// Position exactly under the nav bar:
-			position: absolute; 
+			position: absolute;
 			top: 100%;
 			left: 0;
 			right: 0;
 			z-index: 10;
-			
+
 			//display: none; // Don't show until it's focused
 			transform: translateY(-100%);
 			transition: transform 0.4s;
@@ -155,7 +159,7 @@ $black-text-color: rgb(47, 47, 48);
 	background-color: #f3f3f3;
 
 	flex-grow: 1;
-	
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -181,7 +185,6 @@ $black-text-color: rgb(47, 47, 48);
 
 		.intro2 {
 			font-family: serif;
-			
 		}
 
 		.intro3 {
@@ -244,7 +247,7 @@ $black-text-color: rgb(47, 47, 48);
 		font-size: 21px;
 		p {
 			line-height: 2em;
-		}		
+		}
 	}
 
 	&.color2 {
