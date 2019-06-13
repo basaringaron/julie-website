@@ -6,6 +6,7 @@
 // Colors
 $charcoal: #2F2F30;
 $yellow: #F2BD1E;
+$teal: #599B8D;
 $light-gray: #F3F3F3;
 
 // Fonts
@@ -213,9 +214,8 @@ strong {
 .hero-sidebar {
 	width: 330px;
 	flex-shrink: 0;
-
-	background-color: #599b8d;
-	color:  white;
+	background-color: $teal;
+	color: white;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -235,6 +235,13 @@ strong {
 
 	p {
 		line-height: 1.5em;
+	}
+
+	h1 {
+		font-family: $crimson-text;
+		font-weight: 600;
+		font-style: normal;
+		margin-bottom: 0;
 	}
 
 	@media screen and (max-width: $hero-break-point) {
