@@ -19,6 +19,7 @@
 	</div>
 
 	<div class="hero-content">
+		<canvas id="hero-background"></canvas>
 		<div class="big-intro">
 			<div class="intro1">Hello, I'm</div>
 			<div class="intro2">Maria Julia Carbajal, PhD</div>
@@ -50,3 +51,93 @@
 		<p><a href="tel:+330785127014">(+33) 07 85 12 70 14</a></p>
 	</div>
 </div>
+
+<script src="https://unpkg.com/zdog@1/dist/zdog.dist.min.js"></script>
+
+<script type="text/javascript">
+(function() {
+	window.addEventListener("load", function() {
+		var canvas = document.querySelector("#hero-background");
+
+		var STROKE = 2;
+		var STROKE_COLOR = "#AAA";
+		var POLYGON_RADIUS = 25;
+		var GAP_X = 400;
+		var GAP_Y = 150;
+
+		var polygonPath = function(n, r) {
+			var path = [];
+			for (var i = 0; i < n; i++) {
+				path.push({
+					x: r * Math.cos(2 * Math.PI * i / n),
+					y: r * Math.sin(2 * Math.PI * i / n)
+				});
+			}
+			return path;
+		};
+
+		var w = canvas.offsetWidth;
+		var h = canvas.offsetHeight;
+
+		canvas.setAttribute("width", w);
+		canvas.setAttribute("height", h);
+
+		var illo = new Zdog.Illustration({
+			element: canvas,
+			zoom: 1,
+			dragRotate: false,
+			centered: false
+		});
+
+		var i = 0, x = 0, y = 0, poly = 0, shapes = [];
+
+		while (y < h) {
+			x = Math.round((i % 2) * (GAP_X / 2));
+
+			while (x < w) {
+				if (++poly > 2) poly = 0;
+
+				shapes.push(new Zdog.Shape({
+					addTo: illo,
+					path: polygonPath(poly + 3, POLYGON_RADIUS),
+					stroke: STROKE,
+					color: STROKE_COLOR,
+					fill: false,
+					translate: {
+						x: x + (0.5 - Math.random()) * (GAP_X / 3),
+						y: y + (0.5 - Math.random()) * (GAP_Y / 3)
+					},
+					rotate: {
+						x: Zdog.TAU * Math.random(),
+						y: Zdog.TAU * Math.random(),
+						z: Zdog.TAU * Math.random()
+					}
+				}));
+
+				x += GAP_X;
+			}
+
+			y += GAP_Y;
+			i++;
+		}
+
+		var rotationInterval = Zdog.TAU / 600;
+
+		var animate = function() {
+			shapes.forEach(function(shape) {
+				shape.rotate.set({
+					z: (shape.rotate.z + rotationInterval) % Zdog.TAU,
+					x: (shape.rotate.x + rotationInterval) % Zdog.TAU,
+					y: (shape.rotate.y + rotationInterval) % Zdog.TAU
+				});
+			});
+
+			illo.updateRenderGraph();
+
+			requestAnimationFrame(animate);
+		};
+
+		animate();
+	});
+})();
+</script>

@@ -200,15 +200,15 @@ strong {
 }
 
 .hero-content {
-	background-color: #f3f3f3;
-
+	background-color: $light-gray;
+	position: relative;
 	flex-grow: 1;
-
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
 	.big-intro {
+		z-index: 1;
 		margin: 50px 0;
 		color: black;
 		font-size: calc((100vw - 330px) * 0.08);
@@ -244,6 +244,17 @@ strong {
 			font-size: 0.38em;
 		}
 	}
+}
+
+#hero-background {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	//background: red;
 }
 
 .hero-sidebar {
