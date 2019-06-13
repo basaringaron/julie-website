@@ -409,4 +409,5 @@ strong {
 	font-family: $playfair-display;
 	font-style: italic;
 	font-size: 14px;
+	margin-top: auto; // Make footer stick to the bottom, requires body to be flexbox.
 }
