@@ -8,19 +8,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600|Nunito+Sans:300,600|Playfair+Display:400,400i|Poppins:300&display=swap" rel="stylesheet">
 </head>
 <body>
-	<header class="header" style="position: relative; z-index: 10;">
-		<div class="nav" tabindex="-1">
+	<div class="nav" tabindex="-1">
+		<div class='nav-hamburger'>
+			<div class='nav-title'>{{ page.title }}</div>
 			<div class="nav-icon open">☰</div>
 			<div class="nav-icon close" onclick="document.activeElement&&document.activeElement.blur()">&times;</div>
-			<nav class="nav-items">
-				<a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/" class="active">Home</a>
-				<a class="nav-link" href="/#about">About</a>
-				{% for link in site.nav_links %}
-					<a class="nav-link {% if page.url == link.url %}active{% endif %}" href="{{ link.url }}">{{ link.title | escape }}</a>
-				{% endfor %}
-			</nav>
 		</div>
-	</header>
+		<nav class="nav-items">
+			<a class="nav-link {% if page.url == '/' %}active{% endif %}" href="/" class="active">Home</a>
+			<a class="nav-link" href="/#about">About</a>
+			{% for link in site.nav_links %}
+				<a class="nav-link {% if page.url == link.url %}active{% endif %}" href="{{ link.url }}">{{ link.title | escape }}</a>
+			{% endfor %}
+		</nav>
+	</div>
 
 	{{ content }}
 

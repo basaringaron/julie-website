@@ -86,13 +86,22 @@ strong {
 	}
 }
 
+@mixin nav-shadow {
+	box-shadow: 0 0 30px rgba(black, 0.1);
+}
+
 .nav {
 	outline: none; // prevent rendering outline on focus since it has tabindex
 	height: $nav-height;
 	background-color: $nav-bg;
 	padding: 0 40px;
 	line-height: $nav-height;
-	box-shadow: 0 0 30px rgba(black, 0.1);
+	@include nav-shadow;
+	z-index: 10;
+
+	.nav-hamburger {
+		display: none;
+	}
 
 	.nav-items {
 		display: flex;
@@ -124,6 +133,8 @@ strong {
 
 	@media screen and (max-width: $nav-break-point) {
 		position: relative;
+		padding: 0;
+		box-shadow: none;
 
 		.nav-items {
 			// Position exactly under the nav bar:
@@ -131,9 +142,8 @@ strong {
 			top: 100%;
 			left: 0;
 			right: 0;
-			z-index: 10;
+			z-index: -1;
 
-			//display: none; // Don't show until it's focused
 			transform: translateY(-100%);
 			transition: transform 0.4s;
 			display: flex;
@@ -142,9 +152,27 @@ strong {
 			align-items: stretch;
 
 			line-height: 50px;
-			z-index: -1;
-
 			padding: 10px 20px;
+		}
+
+		.nav-hamburger {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: $nav-height;
+			display: block;
+			background-color: $nav-bg;
+			white-space: nowrap;
+			@include nav-shadow;
+		}
+
+		.nav-title {
+			color: white;
+			font-family: $playfair-display;
+			font-style: italic;
+			font-size: 18px;
+			margin-left: 20px;
 		}
 
 		.nav-icon {
