@@ -3,29 +3,31 @@
 ---
 @import 'reset';
 
-$black: #2F2F30;
-$yellow: #f2bd1e;
+// Colors
+$charcoal: #2F2F30;
+$yellow: #F2BD1E;
+$light-gray: #F3F3F3;
 
-$nav-height: 70px
+// Fonts
+$crimson-text: 'Crimson Text', serif;
+$playfair-display: 'Playfair Display', serif;
+$poppins: 'Poppins', sans-serif;
+$nunito: 'Nunito Sans', sans-serif;
+
+$nav-height: 70px;
 $nav-bg: $yellow;
 
 $nav-break-point: 900px;
 $hero-break-point: 800px;
 $dated-item-break-point: 680px;
 
-html {
-	font-family: sans-serif;
-}
-
 // Make footer stick to the bottom of the screen:
 body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-}
-
-.footer {
-	margin-top: auto;
+	font-family: $nunito;
+	font-weight: 300;
 }
 
 p {
@@ -38,9 +40,14 @@ a {
 	color: inherit;
 }
 
-h1, h2 {
+h1, h2, h3 {
+	font-family: $playfair-display;
+	font-weight: 400;
 	font-style: italic;
-	font-family: serif;
+}
+
+strong {
+	font-weight: 600;
 }
 
 .nav {
@@ -58,23 +65,19 @@ h1, h2 {
 	}
 
 	.nav-link {
-		font-family: serif;
 		display: block;
-		padding: 0 10px;
-		color: $black;
+		padding-right: 1.5em;
+		color: $charcoal;
+		font-family: $playfair-display;
 		font-style: italic;
-		font-size: 18px;
+		font-size: 16px;
 		text-decoration: none;
 
 		&:visited {
-			color: $black;
+			color: $charcoal;
 		}
 
-		&:hover {
-			color: white;
-		}
-
-		&.active {
+		&:hover, &:active, &.active {
 			color: white;
 		}
 	}
@@ -171,9 +174,9 @@ h1, h2 {
 
 	.big-intro {
 		margin: 50px 0;
-
-		color: $black;
+		color: black;
 		font-size: calc((100vw - 330px) * 0.08);
+
 		@media screen and (max-width: $hero-break-point) {
 			font-size: calc(100vw * 0.08);
 		}
@@ -182,20 +185,27 @@ h1, h2 {
 			font-size: calc((1280px - 330px) * 0.08);
 		}
 
-
 		.intro1 {
-			font-family: sans-serif;
+			position: relative;
+			left: -0.5em;
+			top: -0.8em;
+			font-family: $poppins;
+			font-weight: 300;
 			font-size: 0.4em;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
 		}
 
 		.intro2 {
-			font-family: serif;
+			font-family: $crimson-text;
+			font-weight: 600;
 		}
 
 		.intro3 {
-			font-family: serif;
+			font-family: $playfair-display;
+			font-weight: 400;
 			font-style: italic;
-			font-size: 0.5em;
+			font-size: 0.38em;
 		}
 	}
 }
@@ -240,13 +250,12 @@ h1, h2 {
 	background-color: white;
 	line-height: 52px;
 	padding: 0 25px;
-	color: $black !important;
-	font-family: sans-serif;
+	color: $charcoal !important;
 }
 
 .page-section {
 	padding: 50px 40px;
-	color: $black;
+	color: $charcoal;
 
 	&.large-font {
 		font-size: 21px;
@@ -260,7 +269,7 @@ h1, h2 {
 		background-color: #f3f3f3;
 
 		h1 {
-			color: $black;
+			color: $charcoal;
 		}
 	}
 
@@ -274,9 +283,8 @@ h1, h2 {
 	}
 
 	h2 {
-		font-family: sans-serif;
+		font-weight: 400;
 		font-style: normal;
-		font-weight: normal;
 		font-size: 22px;
 		margin: 40px 0;
 	}
@@ -326,4 +334,7 @@ h1, h2 {
 	background-color: #599b8d;
 	text-align: center;
 	color: white;
+	font-family: $playfair-display;
+	font-style: italic;
+	font-size: 14px;
 }
