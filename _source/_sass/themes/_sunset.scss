@@ -1,0 +1,31 @@
+$pink: #F67280;
+$blue: #35477D;
+$dark-blue: darken($blue, 20);
+$purple: #6C5B7B;
+$dark-pink: #C06C84;
+$gray: #313131;
+$light-gray: #F3F3F3;
+
+$button-bg: $pink;
+$button-color: white;
+$button-active-bg: white;
+$button-active-color: $pink;
+
+$nav-bg: $pink;
+$nav-link-color: white;
+$nav-link-active-color: $gray;
+
+$hero-section-border-bottom-color: $purple;
+$hero-bg: $light-gray;
+$hero-color: black;
+$hero-sidebar-bg: $blue;
+$hero-sidebar-color: white;
+
+$page-section-color: $blue;
+$page-section-heading-color: $pink;
+$page-section-bg-alt: $blue;
+$page-section-color-alt: white;
+$page-section-heading-color-alt: white;
+
+$footer-bg: $dark-blue;
+$footer-color: white;
