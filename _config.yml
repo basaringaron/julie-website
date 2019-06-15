@@ -38,19 +38,19 @@ markdown: kramdown
 # Note: index and about are hardcoded in the layout
 nav_links:
   -
-    url: /education
+    url: /education.html
     title: Education
   -
-    url: /experience
+    url: /experience.html
     title: Experience
   -
-    url: /publications
+    url: /publications.html
     title: Publications & Presentations
   -
-    url: /skills
+    url: /skills.html
     title: Skills & Languages
   -
-    url: /other
+    url: /other.html
     title: Other Interests
 
 # Exclude from processing.
