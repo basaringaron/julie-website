@@ -17,6 +17,10 @@ $nav-break-point: 900px;
 $hero-break-point: 800px;
 $dated-item-break-point: 680px;
 
+html {
+	scroll-behavior: smooth;
+}
+
 // Make footer stick to the bottom of the screen:
 body {
 	min-height: 100vh;
