@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ site.title }}</title>
 	<link rel="stylesheet" href="/css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600|Nunito+Sans:300,600|Playfair+Display:400,400i|Poppins:300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Crimson+Text:600|Nunito+Sans:300,600|Playfair+Display:400,400i|Montserrat:300&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
@@ -26,6 +26,9 @@
 
 	{{ content }}
 
-	<footer class="footer">© 2019 Maria Julia Carbajal. Last updated: May 2019</footer>
+	<footer class="footer">
+		© {{ site.time | date: "%Y" }} Maria Julia Carbajal.
+		Last updated {{ site.time | date_to_long_string: "ordinal" }}
+	</footer>
 </body>
 </html>

@@ -2,13 +2,15 @@
 # This section (Yaml) is required by Jekyll
 ---
 @import "reset";
+@import "fontello-icons";
+
 //@import "themes/brasil";
 @import "themes/sunset";
 
 // Fonts
 $crimson-text: 'Crimson Text', serif;
 $playfair-display: 'Playfair Display', serif;
-$poppins: 'Poppins', sans-serif;
+$montserrat: 'Montserrat', sans-serif; //'Poppins', sans-serif;
 $nunito: 'Nunito Sans', sans-serif;
 
 $nav-height: 70px;
@@ -254,7 +256,7 @@ strong {
 			position: relative;
 			left: -0.5em;
 			top: -0.8em;
-			font-family: $poppins;
+			font-family: $montserrat;
 			font-weight: 300;
 			font-size: 0.4em;
 			letter-spacing: 0.2em;
@@ -297,6 +299,20 @@ strong {
 	justify-content: center;
 	text-align: center;
 	padding: 50px 0px;
+
+	.social {
+		font-size: 18px;
+	}
+
+	.research-gate-icon {
+		// Match the icon size with font size
+		width: 18px;
+		height: 18px;
+		vertical-align: middle;
+		position: relative;
+		// Kinda eyeballed the offset here
+		top: -3px;
+	}
 
 	> * {
 		margin-bottom: 30px;
