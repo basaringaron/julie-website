@@ -395,7 +395,7 @@ strong {
 	margin-bottom: 40px;
 
 	.date {
-		//width: 140px;
+		width: 200px; // Default value for browsers that don't support css variables (ie11)
 		width: var(--date-width, 140px);
 		flex-shrink: 0;
 		margin-bottom: 10px;
